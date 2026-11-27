@@ -1,69 +1,235 @@
-﻿:root {
-  color-scheme: light;
-  --ink: #211732;
-  --muted: #544b61;
-  --purple: #55318a;
-  --paper: #fbf8f3;
-  --lavender: #eee4fa;
-  --line: #ded4e7;
+﻿/* Shared styles for text, links, and images. */
+* {
+  box-sizing: border-box;
 }
-* { box-sizing: border-box; }
-body { margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.65 system-ui, sans-serif; }
-a { color: var(--purple); text-underline-offset: .2em; }
-a:hover { text-decoration-thickness: .15em; }
-a:focus-visible { outline: 3px solid #914eca; outline-offset: 4px; }
-h1, h2, h3, p, figure { margin: 0; }
-p + p { margin-top: .65rem; }
-h1, h2 { font-family: Georgia, serif; font-weight: 500; line-height: 1.06; letter-spacing: -.045em; }
-h1 { font-size: clamp(2.6rem, 6.6vw, 6rem); }
-h1 em { display: block; color: var(--purple); font-weight: inherit; }
-h2 { font-size: clamp(2rem, 4.5vw, 3.55rem); }
-h3 { font-size: 1.13rem; line-height: 1.25; }
 
-img { display: block; width: 100%; height: auto; }
+body {
+  margin: 0;
+  background-color: #fbf8f3;
+  color: #211732;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
 
-.wrap { width: min(72rem, calc(100% - 2rem)); margin-inline: auto;}
+a {
+  color: #55318a;
+}
 
-.skip { position: absolute; top: .5rem; left: .5rem; transform: translateY(-200%); background: white; padding: .5rem 1rem; z-index: 1; }
-.skip:focus { transform: none; }
-.site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
-.header-inner, nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.3rem; }
-.header-inner { justify-content: space-between; padding-block: 1.1rem; }
-.brand { font-weight: 800; color: var(--ink); text-decoration: none; }
-.brand span { color: var(--purple); margin-right: .25rem; }
-nav a { font-size: .92rem; padding-block: .35rem; text-decoration: none; }
-nav a[aria-current="page"], nav a:hover { text-decoration: underline; }
-.hero { display: grid; grid-template-columns: 1.06fr 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; max-width: 90rem; margin: auto; padding: clamp(2rem, 5vw, 5rem) max(1rem, calc((100% - 72rem) / 2)); background: var(--lavender); }
-.hero img { aspect-ratio: 5 / 4; object-fit: cover; border-radius: 1.4rem 1.4rem .35rem 1.4rem; }
-figcaption { margin-top: .4rem; color: var(--muted); font-size: .82rem; }
-.eyebrow { color: var(--purple); font-size: .77rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin-bottom: .8rem; }
-.hero-copy > p:not(.eyebrow), .page-intro > p:not(.eyebrow) { margin-top: 1.2rem; max-width: 36rem; font-size: 1.12rem; color: var(--muted); }
-.actions { margin-top: 1.6rem; }
-.button { display: inline-flex; align-items: center; gap: .65rem; background: var(--purple); color: white; padding: .75rem 1rem; border-radius: .45rem; text-decoration: none; font-weight: 700; }
-.button:hover { background: #3f206b; }
-.text-link { font-weight: 650; }
-.section { padding-block: clamp(1.9rem, 5vw, 4rem); }
-.intro { max-width: 46rem; }
-.intro > p:last-child, .split p:not(.eyebrow) { margin-top: .9rem; }
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-.cards article { background: white; border: 1px solid var(--line); border-top: .3rem solid #a47bcb; padding: 1.3rem; border-radius: .8rem; }
-.cards p, .steps p { margin-top: .5rem; color: var(--muted); }
-.callout { margin-bottom: 3rem; padding: clamp(1.2rem, 3vw, 2.3rem); background: #f6e4d9; border-radius: 1rem; }
-.callout p { margin: .75rem 0; max-width: 55rem; }
-.page-intro { margin-top: 1.5rem; padding: clamp(1.6rem, 5vw, 4rem); background: var(--lavender); border-radius: 1rem; }
-.steps { list-style: decimal-leading-zero; padding-left: 2.1rem; max-width: 48rem; }
-.steps li { padding: .85rem .4rem; border-bottom: 1px solid var(--line); }
-.steps li::marker { color: var(--purple); font-weight: 800; }
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-.split img { border-radius: 1rem; }
-.split a { display: inline-block; margin-top: .6rem; }
-.sources { padding-left: 1.3rem; }
-.sources li { padding-block: .5rem; }
-.sources a { font-weight: 700; }
-.site-footer { padding-block: 1.8rem; background: #241936; color: #f9f3ff; }
-.site-footer p:last-child { font-size: .9rem; color: #e3d7ef; }
-@media (max-width: 45rem) {
-  .hero, .cards, .split { grid-template-columns: 1fr; }
-  .hero img { aspect-ratio: 16 / 10; }
+a:focus {
+  outline: 3px solid #914eca;
+  outline-offset: 3px;
+}
+
+h1, h2, h3, p, figure {
+  margin: 0 0 12px;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h1 em {
+  display: block;
+  color: #55318a;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+figcaption {
+  margin-top: 6px;
+  color: #544b61;
+  font-size: 14px;
+}
+
+/* Page width and centering. */
+.wrap {
+  width: 92%;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keyboard navigation. The skip link appears when focused. */
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  padding: 8px 16px;
+  background-color: white;
+}
+
+.skip:focus {
+  top: 8px;
+}
+
+/* Header and navigation layout. */
+.site-header {
+  border-bottom: 1px solid #ded4e7;
+}
+
+.header-inner, nav, .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-inner {
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.brand {
+  color: #211732;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a {
+  padding: 4px;
+  text-decoration: none;
+}
+
+nav .current, nav a:hover {
+  text-decoration: underline;
+}
+
+/* Introduction and photo layouts. Flexbox puts text and photos side by side. */
+.hero {
+  background-color: #eee4fa;
+}
+
+.hero-layout, .split {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-layout {
+  padding: 48px 0;
+}
+
+.hero-copy, .photo, .support-copy {
+  width: 50%;
+}
+
+/* Introduction labels and action buttons. */
+.eyebrow {
+  color: #55318a;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #55318a;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #3f206b;
+}
+
+/* Content spacing, cards, and callout boxes. */
+.section {
+  padding: 36px 0;
+}
+
+.intro, .steps {
+  max-width: 750px;
+}
+
+.cards {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cards article {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ded4e7;
+  border-top: 5px solid #a47bcb;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.callout, .page-intro {
+  padding: 28px;
+  border-radius: 16px;
+}
+
+.callout {
+  margin-bottom: 36px;
+  background-color: #f6e4d9;
+}
+
+.page-intro {
+  margin-top: 24px;
+  background-color: #eee4fa;
+}
+
+/* Lists on the Respond and Resources pages. */
+.steps, .sources {
+  padding-left: 26px;
+}
+
+.steps li {
+  padding: 12px 0;
+  border-bottom: 1px solid #ded4e7;
+}
+
+.sources li {
+  margin-bottom: 12px;
+}
+
+/* Footer colors and spacing. */
+.site-footer {
+  padding: 24px 0;
+  background-color: #241936;
+  color: white;
+}
+
+/* Mobile layout. Stack the columns and reduce heading sizes. */
+@media (max-width: 720px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .hero-layout, .split, .cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-copy, .photo, .support-copy {
+    width: 100%;
+  }
 }
 
